@@ -57,7 +57,8 @@ public class CommentServiceImpl implements CommentService{
     public String deleteComment(String postId, String commentId) {
         commentRepo.deleteById(commentId);
         return deletedComment;
-    } @Override
+    }
+    @Override
     public int getCommentsCount(String postId) {
         List<Comment> comments = commentRepo.findByPostId(postId);
         return comments.size();
