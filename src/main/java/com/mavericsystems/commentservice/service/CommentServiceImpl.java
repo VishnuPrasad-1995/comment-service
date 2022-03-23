@@ -27,5 +27,15 @@ public class CommentServiceImpl implements CommentService{
     public List<Comment> getComments(String postId) {
         return commentRepo.findByPostId(postId);
     }
-
+    @Override
+    public CommentDto createComment(String postId, CommentRequest commentRequest) {
+        Comment comment = new Comment();
+        comment.setPostId(postId);
+        comment.setComment(commentRequest.getComment());
+        comment.setCommentedBy(commentRequest.getCommentedBy());
+        comment.setCreatedAt(LocalDate.now());
+        comment.setUpdatedAt(LocalDate.now());
+        commentRepo.save(comment);
+        return new CommentDto(comment.getId(),comment.getComment(),comment.getCommentedBy(),likeFeign.getLikesCount(comment.getId()),comment.getCreatedAt(),comment.getUpdatedAt(),comment.getPostId());
+    }
 }

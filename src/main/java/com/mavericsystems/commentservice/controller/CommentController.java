@@ -21,6 +21,9 @@ public class CommentController {
     public ResponseEntity<List<Comment>> getComments(@PathVariable("postId") String postId){
         return new ResponseEntity<>(commentService.getComments(postId), HttpStatus.OK);
     }
-
+    @PostMapping()
+    public ResponseEntity<CommentDto> createComment(@PathVariable("postId") String postId,@Valid @RequestBody CommentRequest commentRequest){
+        return new ResponseEntity<>(commentService.createComment(postId,commentRequest), HttpStatus.CREATED);
+    }
 
 }
