@@ -27,7 +27,7 @@ public class CommentController {
         return new ResponseEntity<>(commentService.createComment(postId,commentRequest), HttpStatus.CREATED);
     }
     @PutMapping("/{commentId}")
-    public ResponseEntity<Comment> updateComment(@PathVariable("postId") String postId,@PathVariable("commentId") String commentId,@Valid @RequestBody CommentRequest commentRequest){
+    public ResponseEntity<CommentDto> updateComment(@PathVariable("postId") String postId,@PathVariable("commentId") String commentId,@Valid @RequestBody CommentRequest commentRequest){
         return new ResponseEntity<>(commentService.updateComment(postId,commentRequest,commentId), HttpStatus.OK);
     }
 
@@ -42,8 +42,8 @@ public class CommentController {
         return new ResponseEntity<>(commentService.deleteComment(postId,commentId), HttpStatus.OK);
     }
     @GetMapping("/count")
-    public ResponseEntity<Integer> getCommentsCount(@PathVariable("postId") String postId){
-        return new ResponseEntity<>(commentService.getCommentsCount(postId), HttpStatus.OK);
+    public Integer getCommentsCount(@PathVariable("postId") String postId){
+        return commentService.getCommentsCount(postId);
     }
 
 }

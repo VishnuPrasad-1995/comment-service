@@ -15,5 +15,4 @@ public class CommentDto {
     private int likesCount;
     private LocalDate createdAt;
     private LocalDate updatedAt;
-    private String postId;
 }
