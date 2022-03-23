@@ -11,9 +11,10 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
-import static com.mavericsystems.commentservice.constant.CommentConstant.deletedComment;
+import static com.mavericsystems.commentservice.constant.CommentConstant.DELETEDCOMMENT;
 
 @Service
 public class CommentServiceImpl implements CommentService{
@@ -25,7 +26,7 @@ public class CommentServiceImpl implements CommentService{
     @Autowired
     UserFeign userFeign;
     @Override
-    public List<Comment> getComments(String postId,Integer page, Integer pageSize) {
+    public List<CommentDto> getComments(String postId,Integer page, Integer pageSize) {
         if(page==null){
             page=1;
         }
@@ -33,8 +34,13 @@ public class CommentServiceImpl implements CommentService{
             pageSize=10;
         }
         List<Comment> comments = commentRepo.findByPostId(postId, PageRequest.of(page-1, pageSize));
+        List<CommentDto> commentDtoList = new ArrayList<>();
+        for (Comment comment : comments){
+            commentDtoList.add(new CommentDto(comment.getId(),comment.getComment(),userFeign.getUserById(comment.getCommentedBy()),
+                    likeFeign.getLikesCount(comment.getId()),comment.getCreatedAt(),comment.getUpdatedAt()));
+        }
 
-        return comments;
+        return commentDtoList;
     }
     @Override
     public CommentDto createComment(String postId, CommentRequest commentRequest) {
@@ -45,30 +51,35 @@ public class CommentServiceImpl implements CommentService{
         comment.setCreatedAt(LocalDate.now());
         comment.setUpdatedAt(LocalDate.now());
         commentRepo.save(comment);
-        return new CommentDto(comment.getId(),comment.getComment(),comment.getCommentedBy(),likeFeign.getLikesCount(comment.getId()),comment.getCreatedAt(),comment.getUpdatedAt(),comment.getPostId());
+        return new CommentDto(comment.getId(),comment.getComment(),userFeign.getUserById(comment.getCommentedBy()),
+                likeFeign.getLikesCount(comment.getId()),comment.getCreatedAt(),comment.getUpdatedAt());
     }
     @Override
     public CommentDto getCommentDetails(String postId, String commentId) {
         Comment comment = commentRepo.findByPostIdAndId(postId, commentId);
-// String userName = userFeign.getUserById(comment.getCommentedBy()).getBody().getFirstName();
-        return new CommentDto(commentId,comment.getComment(),comment.getCommentedBy(),likeFeign.getLikesCount(commentId),comment.getCreatedAt(),comment.getUpdatedAt(),postId);
+        return new CommentDto(comment.getId(),comment.getComment(),userFeign.getUserById(comment.getCommentedBy()),
+                likeFeign.getLikesCount(comment.getId()),comment.getCreatedAt(),comment.getUpdatedAt());
 
     }
 
     @Override
-    public Comment updateComment(String postId, CommentRequest commentRequest,String commentId) {
-        Comment comment1 = commentRepo.findByPostIdAndId(postId,commentId);
-        comment1.setComment(commentRequest.getComment());
-        return commentRepo.save(comment1);
+    public CommentDto updateComment(String postId, CommentRequest commentRequest,String commentId) {
+        Comment comment = commentRepo.findByPostIdAndId(postId,commentId);
+        comment.setComment(commentRequest.getComment());
+        comment.setUpdatedAt(LocalDate.now());
+        commentRepo.save(comment);
+        return new CommentDto(comment.getId(),comment.getComment(),userFeign.getUserById(comment.getCommentedBy()),
+                likeFeign.getLikesCount(comment.getId()),comment.getCreatedAt(),comment.getUpdatedAt());
+
     }
 
     @Override
     public String deleteComment(String postId, String commentId) {
         commentRepo.deleteById(commentId);
-        return deletedComment;
+        return DELETEDCOMMENT;
     }
     @Override
-    public int getCommentsCount(String postId) {
+    public Integer getCommentsCount(String postId) {
         List<Comment> comments = commentRepo.findByPostId(postId);
         return comments.size();
     }

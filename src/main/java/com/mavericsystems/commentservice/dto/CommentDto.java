@@ -11,9 +11,8 @@ import java.time.LocalDate;
 public class CommentDto {
     private String id;
     private String comment;
-    private String commentedBy;
+    private UserDto commentedBy;
     private int likesCount;
     private LocalDate createdAt;
     private LocalDate updatedAt;
-    private String postId;
 }

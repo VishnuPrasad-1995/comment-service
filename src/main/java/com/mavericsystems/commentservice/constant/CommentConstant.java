@@ -5,5 +5,5 @@ public final class CommentConstant {
         // restrict instantiation
     }
 
-    public final static String deletedComment = "Comment deleted successfully"  ;
+    public final static String DELETEDCOMMENT = "Comment deleted successfully"  ;
 }
