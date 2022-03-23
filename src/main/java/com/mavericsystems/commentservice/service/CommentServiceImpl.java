@@ -53,6 +53,7 @@ public class CommentServiceImpl implements CommentService{
         commentRepo.save(comment);
         return new CommentDto(comment.getId(),comment.getComment(),userFeign.getUserById(comment.getCommentedBy()),
                 likeFeign.getLikesCount(comment.getId()),comment.getCreatedAt(),comment.getUpdatedAt());
+
     }
     @Override
     public CommentDto getCommentDetails(String postId, String commentId) {
