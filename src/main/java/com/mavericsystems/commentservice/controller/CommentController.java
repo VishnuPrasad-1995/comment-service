@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import javax.ws.rs.QueryParam;
 import java.util.List;
 
 @RestController
@@ -18,8 +19,8 @@ public class CommentController {
     @Autowired
     CommentService commentService;
     @GetMapping()
-    public ResponseEntity<List<Comment>> getComments(@PathVariable("postId") String postId){
-        return new ResponseEntity<>(commentService.getComments(postId), HttpStatus.OK);
+    public ResponseEntity<List<Comment>> getComments(@PathVariable("postId") String postId, @QueryParam("page") Integer page, @QueryParam("pageSize") Integer pageSize){
+        return new ResponseEntity<>(commentService.getComments(postId,page,pageSize), HttpStatus.OK);
     }
     @PostMapping()
     public ResponseEntity<CommentDto> createComment(@PathVariable("postId") String postId,@Valid @RequestBody CommentRequest commentRequest){

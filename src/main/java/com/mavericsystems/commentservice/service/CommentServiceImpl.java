@@ -7,6 +7,7 @@ import com.mavericsystems.commentservice.feign.UserFeign;
 import com.mavericsystems.commentservice.model.Comment;
 import com.mavericsystems.commentservice.repo.CommentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -24,8 +25,16 @@ public class CommentServiceImpl implements CommentService{
     @Autowired
     UserFeign userFeign;
     @Override
-    public List<Comment> getComments(String postId) {
-        return commentRepo.findByPostId(postId);
+    public List<Comment> getComments(String postId,Integer page, Integer pageSize) {
+        if(page==null){
+            page=1;
+        }
+        if(pageSize==null){
+            pageSize=10;
+        }
+        List<Comment> comments = commentRepo.findByPostId(postId, PageRequest.of(page-1, pageSize));
+
+        return comments;
     }
     @Override
     public CommentDto createComment(String postId, CommentRequest commentRequest) {
