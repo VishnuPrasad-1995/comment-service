@@ -36,5 +36,12 @@ public class CommentController {
     public ResponseEntity<CommentDto> getCommentDetails(@PathVariable("postId") String postId, @PathVariable("commentId") String commentId){
         return new ResponseEntity<>(commentService.getCommentDetails(postId,commentId), HttpStatus.OK);
     }
+    @DeleteMapping("/{commentId}")
+    public ResponseEntity<String> deleteComment(@PathVariable("postId") String postId,@PathVariable("commentId") String commentId){
+        return new ResponseEntity<>(commentService.deleteComment(postId,commentId), HttpStatus.OK);
+    } @GetMapping("/count")
+    public ResponseEntity<Integer> getCommentsCount(@PathVariable("postId") String postId){
+        return new ResponseEntity<>(commentService.getCommentsCount(postId), HttpStatus.OK);
+    }
 
 }

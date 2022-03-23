@@ -53,4 +53,14 @@ public class CommentServiceImpl implements CommentService{
         return commentRepo.save(comment1);
     }
 
+    @Override
+    public String deleteComment(String postId, String commentId) {
+        commentRepo.deleteById(commentId);
+        return deletedComment;
+    } @Override
+    public int getCommentsCount(String postId) {
+        List<Comment> comments = commentRepo.findByPostId(postId);
+        return comments.size();
+    }
+
 }
