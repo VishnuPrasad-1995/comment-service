@@ -25,5 +25,16 @@ public class CommentController {
     public ResponseEntity<CommentDto> createComment(@PathVariable("postId") String postId,@Valid @RequestBody CommentRequest commentRequest){
         return new ResponseEntity<>(commentService.createComment(postId,commentRequest), HttpStatus.CREATED);
     }
+    @PutMapping("/{commentId}")
+    public ResponseEntity<Comment> updateComment(@PathVariable("postId") String postId,@PathVariable("commentId") String commentId,@Valid @RequestBody CommentRequest commentRequest){
+        return new ResponseEntity<>(commentService.updateComment(postId,commentRequest,commentId), HttpStatus.OK);
+    }
+
+
+
+    @GetMapping("/{commentId}")
+    public ResponseEntity<CommentDto> getCommentDetails(@PathVariable("postId") String postId, @PathVariable("commentId") String commentId){
+        return new ResponseEntity<>(commentService.getCommentDetails(postId,commentId), HttpStatus.OK);
+    }
 
 }

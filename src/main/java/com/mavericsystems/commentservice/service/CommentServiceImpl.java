@@ -38,4 +38,19 @@ public class CommentServiceImpl implements CommentService{
         commentRepo.save(comment);
         return new CommentDto(comment.getId(),comment.getComment(),comment.getCommentedBy(),likeFeign.getLikesCount(comment.getId()),comment.getCreatedAt(),comment.getUpdatedAt(),comment.getPostId());
     }
+    @Override
+    public CommentDto getCommentDetails(String postId, String commentId) {
+        Comment comment = commentRepo.findByPostIdAndId(postId, commentId);
+// String userName = userFeign.getUserById(comment.getCommentedBy()).getBody().getFirstName();
+        return new CommentDto(commentId,comment.getComment(),comment.getCommentedBy(),likeFeign.getLikesCount(commentId),comment.getCreatedAt(),comment.getUpdatedAt(),postId);
+
+    }
+
+    @Override
+    public Comment updateComment(String postId, CommentRequest commentRequest,String commentId) {
+        Comment comment1 = commentRepo.findByPostIdAndId(postId,commentId);
+        comment1.setComment(commentRequest.getComment());
+        return commentRepo.save(comment1);
+    }
+
 }
