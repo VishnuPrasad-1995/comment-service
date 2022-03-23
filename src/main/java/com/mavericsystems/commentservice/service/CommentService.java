@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface CommentService {
     List<Comment> getComments(String postId);
-
+    CommentDto createComment(String postId, CommentRequest commentRequest);
 
 }
