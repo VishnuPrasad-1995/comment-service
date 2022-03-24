@@ -14,7 +14,7 @@ import javax.ws.rs.QueryParam;
 import java.util.List;
 
 @RestController
-@RequestMapping("/comment/posts/{postId}/comments")
+@RequestMapping("/posts/{postId}/comments")
 public class CommentController {
     @Autowired
     CommentService commentService;
