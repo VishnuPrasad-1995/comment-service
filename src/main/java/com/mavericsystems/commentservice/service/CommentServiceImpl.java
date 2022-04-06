@@ -8,6 +8,8 @@ import com.mavericsystems.commentservice.feign.LikeFeign;
 import com.mavericsystems.commentservice.feign.UserFeign;
 import com.mavericsystems.commentservice.model.Comment;
 import com.mavericsystems.commentservice.repo.CommentRepo;
+import com.netflix.hystrix.exception.HystrixRuntimeException;
+import feign.FeignException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -41,15 +43,12 @@ public class CommentServiceImpl implements CommentService{
                         likeFeign.getLikesCount(comment.getId()),comment.getCreatedAt(),comment.getUpdatedAt()));
             }
             if(commentDtoList.isEmpty()){
-                throw new CommentNotFoundException(COMMENTNOTFOUND + postId);
+                throw new CommentNotFoundException(COMMENT_NOT_FOUND + postId);
             }
             return commentDtoList;
         }
-        catch (feign.FeignException e){
-            throw new CustomFeignException(FEIGNEXCEPTON);
-        }
-        catch (com.netflix.hystrix.exception.HystrixRuntimeException e){
-            throw new CustomFeignException(FEIGNEXCEPTON);
+        catch (FeignException | HystrixRuntimeException e){
+            throw new CustomFeignException(FEIGN_EXCEPTION);
         }
     }
     @Override
@@ -66,28 +65,22 @@ public class CommentServiceImpl implements CommentService{
                     likeFeign.getLikesCount(comment.getId()),comment.getCreatedAt(),comment.getUpdatedAt());
 
         }
-        catch (feign.FeignException e){
-            throw new CustomFeignException(FEIGNEXCEPTON);
-        }
-        catch (com.netflix.hystrix.exception.HystrixRuntimeException e){
-            throw new CustomFeignException(FEIGNEXCEPTON);
+        catch (FeignException | HystrixRuntimeException e){
+            throw new CustomFeignException(FEIGN_EXCEPTION);
         }
     }
     @Override
     public CommentDto getCommentDetails(String postId, String commentId) {
         try{
             Comment comment = commentRepo.findByPostIdAndId(postId, commentId);
-            if(comment.equals(null)){
-                throw new CommentNotFoundException(COMMENTNOTFOUND + postId + COMMENTID + commentId);
+            if(comment == null){
+                throw new CommentNotFoundException(COMMENT_NOT_FOUND + postId + COMMENT_ID + commentId);
             }
             return new CommentDto(comment.getId(),comment.getComment(),userFeign.getUserById(comment.getCommentedBy()),
                     likeFeign.getLikesCount(comment.getId()),comment.getCreatedAt(),comment.getUpdatedAt());
         }
-        catch (feign.FeignException e){
-            throw new CustomFeignException(FEIGNEXCEPTON);
-        }
-        catch (com.netflix.hystrix.exception.HystrixRuntimeException e){
-            throw new CustomFeignException(FEIGNEXCEPTON);
+        catch (FeignException | HystrixRuntimeException e){
+            throw new CustomFeignException(FEIGN_EXCEPTION);
         }
     }
 
@@ -95,8 +88,8 @@ public class CommentServiceImpl implements CommentService{
     public CommentDto updateComment(String postId, CommentRequest commentRequest,String commentId) {
         try{
             Comment comment = commentRepo.findByPostIdAndId(postId,commentId);
-            if(comment.equals(null)){
-                throw new CommentNotFoundException(COMMENTNOTFOUND + postId + COMMENTID + commentId);
+            if(comment == null){
+                throw new CommentNotFoundException(COMMENT_NOT_FOUND + postId + COMMENT_ID + commentId);
             }
             comment.setComment(commentRequest.getComment());
             comment.setUpdatedAt(LocalDate.now());
@@ -104,11 +97,8 @@ public class CommentServiceImpl implements CommentService{
             return new CommentDto(comment.getId(),comment.getComment(),userFeign.getUserById(comment.getCommentedBy()),
                     likeFeign.getLikesCount(comment.getId()),comment.getCreatedAt(),comment.getUpdatedAt());
         }
-        catch (feign.FeignException e){
-            throw new CustomFeignException(FEIGNEXCEPTON);
-        }
-        catch (com.netflix.hystrix.exception.HystrixRuntimeException e){
-            throw new CustomFeignException(FEIGNEXCEPTON);
+        catch (FeignException | HystrixRuntimeException e){
+            throw new CustomFeignException(FEIGN_EXCEPTION);
         }
     }
 
@@ -116,10 +106,10 @@ public class CommentServiceImpl implements CommentService{
     public String deleteComment(String postId, String commentId) {
         try{
             commentRepo.deleteById(commentId);
-            return DELETEDCOMMENT;
+            return DELETED_COMMENT;
         }
         catch (Exception e){
-            throw new CommentNotFoundException(COMMENTNOTFOUND + postId);
+            throw new CommentNotFoundException(COMMENT_NOT_FOUND + postId);
         }
     }
     @Override
@@ -129,7 +119,7 @@ public class CommentServiceImpl implements CommentService{
             return comments.size();
         }
         catch (Exception e){
-            throw new CommentNotFoundException(COMMENTNOTFOUND + postId);
+            throw new CommentNotFoundException(COMMENT_NOT_FOUND + postId);
         }
 
     }

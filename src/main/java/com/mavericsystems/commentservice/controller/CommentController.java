@@ -14,7 +14,7 @@ import javax.validation.Valid;
 import javax.ws.rs.QueryParam;
 import java.util.List;
 
-import static com.mavericsystems.commentservice.constant.CommentConstant.COMMENTIDMISMATCH;
+import static com.mavericsystems.commentservice.constant.CommentConstant.COMMENT_ID_MISMATCH;
 
 @CrossOrigin (origins = "http://localhost:8080")
 @RestController
@@ -35,7 +35,7 @@ public class CommentController {
         if(commentRequest.getId().equals(commentId))
             return new ResponseEntity<>(commentService.updateComment(postId,commentRequest,commentId), HttpStatus.OK);
         else
-            throw new CommentIdMismatchException(COMMENTIDMISMATCH);
+            throw new CommentIdMismatchException(COMMENT_ID_MISMATCH);
 
     }
     @GetMapping("/{commentId}")
