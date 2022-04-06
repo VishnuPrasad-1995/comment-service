@@ -1,831 +1,327 @@
-2022-03-24 09:52:08.923  INFO 16636 --- [restartedMain] c.m.c.CommentServiceApplication          : Starting CommentServiceApplication using Java 1.8.0_251 on MDB22LT465 with PID 16636 (D:\Spring\Assessment\comment-service\target\classes started by vishnup in D:\Spring\Assessment\comment-service)
-2022-03-24 09:52:09.026  INFO 16636 --- [restartedMain] c.m.c.CommentServiceApplication          : No active profile set, falling back to 1 default profile: "default"
-2022-03-24 09:52:09.659  INFO 16636 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-03-24 09:52:09.660  INFO 16636 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2022-03-24 09:52:15.626  INFO 16636 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
-2022-03-24 09:52:17.560  INFO 16636 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1899 ms. Found 1 MongoDB repository interfaces.
-2022-03-24 09:52:19.362  INFO 16636 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=42894af1-7837-34a2-9a47-713030130aff
-2022-03-24 09:52:35.377  INFO 16636 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 3015 (http)
-2022-03-24 09:52:35.548  INFO 16636 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-03-24 09:52:35.549  INFO 16636 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
-2022-03-24 09:52:38.970  INFO 16636 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-03-24 09:52:38.971  INFO 16636 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 29306 ms
-2022-03-24 09:52:42.620  INFO 16636 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
-2022-03-24 09:52:43.801  INFO 16636 --- [cluster-ClusterId{value='623bf21244b83b7c9bfe9cb8', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:41}] to localhost:27017
-2022-03-24 09:52:43.810  INFO 16636 --- [cluster-ClusterId{value='623bf21244b83b7c9bfe9cb8', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=73055900}
-2022-03-24 09:52:43.803  INFO 16636 --- [cluster-rtt-ClusterId{value='623bf21244b83b7c9bfe9cb8', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:40}] to localhost:27017
-2022-03-24 09:52:43.981  WARN 16636 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
-2022-03-24 09:52:44.354  WARN 16636 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
-2022-03-24 09:52:44.528  WARN 16636 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
-2022-03-24 09:52:47.701  INFO 16636 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'like-service' URL not provided. Will try picking an instance via load-balancing.
-2022-03-24 09:52:49.019  INFO 16636 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'user-service' URL not provided. Will try picking an instance via load-balancing.
-2022-03-24 09:53:03.008  INFO 16636 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
-2022-03-24 09:53:16.096  WARN 16636 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2022-03-24 09:53:17.868  INFO 16636 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2022-03-24 09:53:19.458  INFO 16636 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2022-03-24 09:53:19.505  INFO 16636 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-03-24 09:53:19.793  INFO 16636 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2022-03-24 09:53:19.795  INFO 16636 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2022-03-24 09:53:19.796  INFO 16636 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2022-03-24 09:53:19.797  INFO 16636 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2022-03-24 09:53:19.797  INFO 16636 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2022-03-24 09:53:19.797  INFO 16636 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2022-03-24 09:53:19.798  INFO 16636 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2022-03-24 09:53:27.784  INFO 16636 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2022-03-24 09:53:27.823  INFO 16636 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2022-03-24 09:53:27.833  INFO 16636 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2022-03-24 09:53:27.917  INFO 16636 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1648095807871 with initial instances count: 1
-2022-03-24 09:53:27.923  INFO 16636 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application COMMENT-SERVICE with eureka with status UP
-2022-03-24 09:53:27.925  INFO 16636 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1648095807925, current=UP, previous=STARTING]
-2022-03-24 09:53:27.937  INFO 16636 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015: registering service...
-2022-03-24 09:53:28.321  INFO 16636 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 3015 (http) with context path ''
-2022-03-24 09:53:28.323  INFO 16636 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 3015
-2022-03-24 09:53:28.429  INFO 16636 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015 - registration status: 204
-2022-03-24 09:53:32.828  INFO 16636 --- [restartedMain] c.m.c.CommentServiceApplication          : Started CommentServiceApplication in 93.336 seconds (JVM running for 98.972)
-2022-03-24 09:58:19.863  INFO 16636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-03-24 10:03:19.909  INFO 16636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-03-24 10:08:19.939  INFO 16636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-03-24 10:10:01.570  INFO 16636 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application COMMENT-SERVICE with eureka with status DOWN
-2022-03-24 10:10:01.571  INFO 16636 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1648096801571, current=DOWN, previous=UP]
-2022-03-24 10:10:01.574  INFO 16636 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015: registering service...
-2022-03-24 10:10:01.770  INFO 16636 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015 - registration status: 204
-2022-03-24 10:10:03.483  INFO 16636 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
-2022-03-24 10:10:06.755  INFO 16636 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
-2022-03-24 10:10:07.179  INFO 16636 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015 - deregister  status: 200
-2022-03-24 10:10:07.747  INFO 16636 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
-2022-03-24 10:10:25.484  INFO 4016 --- [restartedMain] c.m.c.CommentServiceApplication          : Starting CommentServiceApplication using Java 1.8.0_251 on MDB22LT465 with PID 4016 (D:\Spring\Assessment\comment-service\target\classes started by vishnup in D:\Spring\Assessment\comment-service)
-2022-03-24 10:10:25.487  INFO 4016 --- [restartedMain] c.m.c.CommentServiceApplication          : No active profile set, falling back to 1 default profile: "default"
-2022-03-24 10:10:25.664  INFO 4016 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-03-24 10:10:25.665  INFO 4016 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2022-03-24 10:10:28.522  INFO 4016 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
-2022-03-24 10:10:28.947  INFO 4016 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 399 ms. Found 1 MongoDB repository interfaces.
-2022-03-24 10:10:29.820  INFO 4016 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=42894af1-7837-34a2-9a47-713030130aff
-2022-03-24 10:10:32.393  INFO 4016 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 3015 (http)
-2022-03-24 10:10:32.417  INFO 4016 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-03-24 10:10:32.418  INFO 4016 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
-2022-03-24 10:10:32.643  INFO 4016 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-03-24 10:10:32.644  INFO 4016 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6978 ms
-2022-03-24 10:10:32.926  INFO 4016 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
-2022-03-24 10:10:33.074  INFO 4016 --- [cluster-ClusterId{value='623bf6402a7f134d683655d6', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:45}] to localhost:27017
-2022-03-24 10:10:33.074  INFO 4016 --- [cluster-rtt-ClusterId{value='623bf6402a7f134d683655d6', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:44}] to localhost:27017
-2022-03-24 10:10:33.077  INFO 4016 --- [cluster-ClusterId{value='623bf6402a7f134d683655d6', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=43529800}
-2022-03-24 10:10:33.195  WARN 4016 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
-2022-03-24 10:10:33.366  WARN 4016 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
-2022-03-24 10:10:33.463  WARN 4016 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
-2022-03-24 10:10:34.003  INFO 4016 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'like-service' URL not provided. Will try picking an instance via load-balancing.
-2022-03-24 10:10:34.110  INFO 4016 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'user-service' URL not provided. Will try picking an instance via load-balancing.
-2022-03-24 10:10:36.291  INFO 4016 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
-2022-03-24 10:10:38.191  WARN 4016 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2022-03-24 10:10:38.230  INFO 4016 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2022-03-24 10:10:38.399  INFO 4016 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2022-03-24 10:10:38.412  INFO 4016 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-03-24 10:10:38.468  INFO 4016 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2022-03-24 10:10:38.468  INFO 4016 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2022-03-24 10:10:38.468  INFO 4016 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2022-03-24 10:10:38.468  INFO 4016 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2022-03-24 10:10:38.468  INFO 4016 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2022-03-24 10:10:38.468  INFO 4016 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2022-03-24 10:10:38.468  INFO 4016 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2022-03-24 10:10:40.178  INFO 4016 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2022-03-24 10:10:40.182  INFO 4016 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2022-03-24 10:10:40.186  INFO 4016 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2022-03-24 10:10:40.194  INFO 4016 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1648096840190 with initial instances count: 4
-2022-03-24 10:10:40.195  INFO 4016 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application COMMENT-SERVICE with eureka with status UP
-2022-03-24 10:10:40.196  INFO 4016 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1648096840196, current=UP, previous=STARTING]
-2022-03-24 10:10:40.198  INFO 4016 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015: registering service...
-2022-03-24 10:10:40.241  INFO 4016 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 3015 (http) with context path ''
-2022-03-24 10:10:40.242  INFO 4016 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 3015
-2022-03-24 10:10:40.265  INFO 4016 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015 - registration status: 204
-2022-03-24 10:10:41.835  INFO 4016 --- [restartedMain] c.m.c.CommentServiceApplication          : Started CommentServiceApplication in 19.938 seconds (JVM running for 21.763)
-2022-03-24 10:12:08.200  INFO 4016 --- [http-nio-3015-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-03-24 10:12:08.201  INFO 4016 --- [http-nio-3015-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-03-24 10:12:08.202  INFO 4016 --- [http-nio-3015-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2022-03-24 10:12:08.351  INFO 4016 --- [http-nio-3015-exec-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:46}] to localhost:27017
-2022-03-24 10:15:38.522  INFO 4016 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-03-24 10:18:40.532  INFO 4016 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application COMMENT-SERVICE with eureka with status DOWN
-2022-03-24 10:18:40.537  INFO 4016 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1648097320536, current=DOWN, previous=UP]
-2022-03-24 10:18:40.541  INFO 4016 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015: registering service...
-2022-03-24 10:18:40.768  INFO 4016 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015 - registration status: 204
-2022-03-24 10:18:43.957  INFO 4016 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
-2022-03-24 10:18:46.979  INFO 4016 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
-2022-03-24 10:18:47.021  INFO 4016 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015 - deregister  status: 200
-2022-03-24 10:18:47.047  INFO 4016 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
-2022-03-24 10:19:07.097  INFO 26104 --- [restartedMain] c.m.c.CommentServiceApplication          : Starting CommentServiceApplication using Java 1.8.0_251 on MDB22LT465 with PID 26104 (D:\Spring\Assessment\comment-service\target\classes started by vishnup in D:\Spring\Assessment\comment-service)
-2022-03-24 10:19:07.103  INFO 26104 --- [restartedMain] c.m.c.CommentServiceApplication          : No active profile set, falling back to 1 default profile: "default"
-2022-03-24 10:19:07.249  INFO 26104 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-03-24 10:19:07.249  INFO 26104 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2022-03-24 10:19:09.188  INFO 26104 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
-2022-03-24 10:19:09.465  INFO 26104 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 267 ms. Found 1 MongoDB repository interfaces.
-2022-03-24 10:19:10.068  INFO 26104 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=42894af1-7837-34a2-9a47-713030130aff
-2022-03-24 10:19:12.987  INFO 26104 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 3015 (http)
-2022-03-24 10:19:13.012  INFO 26104 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-03-24 10:19:13.013  INFO 26104 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
-2022-03-24 10:19:13.245  INFO 26104 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-03-24 10:19:13.246  INFO 26104 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5995 ms
-2022-03-24 10:19:13.649  INFO 26104 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
-2022-03-24 10:19:13.796  INFO 26104 --- [cluster-rtt-ClusterId{value='623bf849e54fee58c1ca2229', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:48}] to localhost:27017
-2022-03-24 10:19:13.796  INFO 26104 --- [cluster-ClusterId{value='623bf849e54fee58c1ca2229', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:49}] to localhost:27017
-2022-03-24 10:19:13.800  INFO 26104 --- [cluster-ClusterId{value='623bf849e54fee58c1ca2229', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=56387400}
-2022-03-24 10:19:13.951  WARN 26104 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
-2022-03-24 10:19:14.126  WARN 26104 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
-2022-03-24 10:19:14.270  WARN 26104 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
-2022-03-24 10:19:15.137  INFO 26104 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'like-service' URL not provided. Will try picking an instance via load-balancing.
-2022-03-24 10:19:15.281  INFO 26104 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'user-service' URL not provided. Will try picking an instance via load-balancing.
-2022-03-24 10:19:18.542  INFO 26104 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
-2022-03-24 10:19:20.559  WARN 26104 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2022-03-24 10:19:20.594  INFO 26104 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2022-03-24 10:19:20.798  INFO 26104 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2022-03-24 10:19:20.815  INFO 26104 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-03-24 10:19:20.882  INFO 26104 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2022-03-24 10:19:20.883  INFO 26104 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2022-03-24 10:19:20.883  INFO 26104 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2022-03-24 10:19:20.883  INFO 26104 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2022-03-24 10:19:20.883  INFO 26104 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2022-03-24 10:19:20.883  INFO 26104 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2022-03-24 10:19:20.883  INFO 26104 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2022-03-24 10:19:22.927  INFO 26104 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2022-03-24 10:19:22.931  INFO 26104 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2022-03-24 10:19:22.936  INFO 26104 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2022-03-24 10:19:22.948  INFO 26104 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1648097362944 with initial instances count: 4
-2022-03-24 10:19:22.950  INFO 26104 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application COMMENT-SERVICE with eureka with status UP
-2022-03-24 10:19:22.951  INFO 26104 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1648097362951, current=UP, previous=STARTING]
-2022-03-24 10:19:22.954  INFO 26104 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015: registering service...
-2022-03-24 10:19:23.009  INFO 26104 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 3015 (http) with context path ''
-2022-03-24 10:19:23.012  INFO 26104 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 3015
-2022-03-24 10:19:23.051  INFO 26104 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015 - registration status: 204
-2022-03-24 10:19:24.632  INFO 26104 --- [restartedMain] c.m.c.CommentServiceApplication          : Started CommentServiceApplication in 21.614 seconds (JVM running for 23.232)
-2022-03-24 10:24:21.452  INFO 26104 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-03-24 10:29:21.673  INFO 26104 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-03-24 10:30:07.685  INFO 26104 --- [http-nio-3015-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-03-24 10:30:07.687  INFO 26104 --- [http-nio-3015-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-03-24 10:30:07.873  INFO 26104 --- [http-nio-3015-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 185 ms
-2022-03-24 10:30:08.816  INFO 26104 --- [http-nio-3015-exec-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:51}] to localhost:27017
-2022-03-24 10:30:20.563 ERROR 26104 --- [http-nio-3015-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is feign.RetryableException: connect timed out executing GET http://user-service/users/623a3813908fe104bdd9b57e] with root cause
-
-java.net.SocketTimeoutException: connect timed out
-	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method) ~[na:1.8.0_251]
-	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85) ~[na:1.8.0_251]
-	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_251]
-	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_251]
-	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_251]
-	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[na:1.8.0_251]
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_251]
-	at java.net.Socket.connect(Socket.java:606) ~[na:1.8.0_251]
-	at sun.net.NetworkClient.doConnect(NetworkClient.java:175) ~[na:1.8.0_251]
-	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463) ~[na:1.8.0_251]
-	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558) ~[na:1.8.0_251]
-	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242) ~[na:1.8.0_251]
-	at sun.net.www.http.HttpClient.New(HttpClient.java:339) ~[na:1.8.0_251]
-	at sun.net.www.http.HttpClient.New(HttpClient.java:357) ~[na:1.8.0_251]
-	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226) ~[na:1.8.0_251]
-	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162) ~[na:1.8.0_251]
-	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056) ~[na:1.8.0_251]
-	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990) ~[na:1.8.0_251]
-	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1570) ~[na:1.8.0_251]
-	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1498) ~[na:1.8.0_251]
-	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480) ~[na:1.8.0_251]
-	at feign.Client$Default.convertResponse(Client.java:109) ~[feign-core-11.8.jar:na]
-	at feign.Client$Default.execute(Client.java:105) ~[feign-core-11.8.jar:na]
-	at org.springframework.cloud.openfeign.loadbalancer.LoadBalancerUtils.executeWithLoadBalancerLifecycleProcessing(LoadBalancerUtils.java:56) ~[spring-cloud-openfeign-core-3.1.1.jar:3.1.1]
-	at org.springframework.cloud.openfeign.loadbalancer.LoadBalancerUtils.executeWithLoadBalancerLifecycleProcessing(LoadBalancerUtils.java:91) ~[spring-cloud-openfeign-core-3.1.1.jar:3.1.1]
-	at org.springframework.cloud.openfeign.loadbalancer.FeignBlockingLoadBalancerClient.execute(FeignBlockingLoadBalancerClient.java:113) ~[spring-cloud-openfeign-core-3.1.1.jar:3.1.1]
-	at feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:119) ~[feign-core-11.8.jar:na]
-	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:89) ~[feign-core-11.8.jar:na]
-	at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:100) ~[feign-core-11.8.jar:na]
-	at com.sun.proxy.$Proxy102.getUserById(Unknown Source) ~[na:na]
-	at com.mavericsystems.commentservice.service.CommentServiceImpl.getCommentDetails(CommentServiceImpl.java:61) ~[classes/:na]
-	at com.mavericsystems.commentservice.controller.CommentController.getCommentDetails(CommentController.java:38) ~[classes/:na]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_251]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_251]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_251]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_251]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.16.jar:5.3.16]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.16.jar:5.3.16]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.16.jar:5.3.16]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.16.jar:5.3.16]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.16.jar:5.3.16]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.16.jar:5.3.16]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) ~[spring-webmvc-5.3.16.jar:5.3.16]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.16.jar:5.3.16]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.16.jar:5.3.16]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.16.jar:5.3.16]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655) ~[tomcat-embed-core-9.0.58.jar:4.0.FR]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.16.jar:5.3.16]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.58.jar:4.0.FR]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.58.jar:9.0.58]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.16.jar:5.3.16]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.16.jar:5.3.16]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.16.jar:5.3.16]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.16.jar:5.3.16]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.16.jar:5.3.16]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.16.jar:5.3.16]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:359) [tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) [tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889) [tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1735) [tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.58.jar:9.0.58]
-	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_251]
-
-2022-03-24 10:34:21.755  INFO 26104 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-03-24 10:39:21.812  INFO 26104 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-03-24 10:44:21.898  INFO 26104 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-03-24 10:49:21.963  INFO 26104 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-03-24 10:54:22.011  INFO 26104 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-03-24 10:59:22.073  INFO 26104 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-03-24 11:00:49.216  INFO 26104 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application COMMENT-SERVICE with eureka with status DOWN
-2022-03-24 11:00:49.225  INFO 26104 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1648099849225, current=DOWN, previous=UP]
-2022-03-24 11:00:49.229  INFO 26104 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015: registering service...
-2022-03-24 11:00:52.158  INFO 26104 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
-2022-03-24 11:00:53.740  INFO 26104 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on POST request for "http://localhost:8761/eureka/apps/COMMENT-SERVICE": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8761/eureka/apps/COMMENT-SERVICE": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:785)
-	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:711)
-	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:602)
-	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.register(RestTemplateEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
-	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
-	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
-	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
-	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:776)
-	... 22 more
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
-	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
-	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-	at java.net.Socket.connect(Socket.java:606)
-	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
-	... 35 more
-
-2022-03-24 11:00:53.742  WARN 26104 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/COMMENT-SERVICE": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-2022-03-24 11:00:55.185  INFO 26104 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
-2022-03-24 11:00:57.853  INFO 26104 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on POST request for "http://localhost:8761/eureka/apps/COMMENT-SERVICE": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8761/eureka/apps/COMMENT-SERVICE": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:785)
-	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:711)
-	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:602)
-	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.register(RestTemplateEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
-	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
-	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
-	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
-	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:776)
-	... 23 more
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
-	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
-	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-	at java.net.Socket.connect(Socket.java:606)
-	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
-	... 36 more
-
-2022-03-24 11:00:57.922  WARN 26104 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/COMMENT-SERVICE": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-2022-03-24 11:00:57.937  WARN 26104 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015 - registration failed Cannot execute request on any known server
-
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) [eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101) [eureka-client-1.10.17.jar:1.10.17]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_251]
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_251]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_251]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) [na:1.8.0_251]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_251]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_251]
-	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_251]
-
-2022-03-24 11:00:58.000  WARN 26104 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.discovery.InstanceInfoReplicator     : There was a problem with the instance info replicator
-
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101) [eureka-client-1.10.17.jar:1.10.17]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_251]
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_251]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_251]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) [na:1.8.0_251]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_251]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_251]
-	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_251]
-
-2022-03-24 11:00:59.254  INFO 26104 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:785)
-	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:711)
-	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:602)
-	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:87)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
-	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:972)
-	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:948)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:347)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:177)
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:196)
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:189)
-	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:390)
-	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:212)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1161)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1154)
-	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1106)
-	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1075)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:172)
-	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1021)
-	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
-	at java.lang.Iterable.forEach(Iterable.java:75)
-	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
-	at java.lang.Thread.run(Thread.java:748)
-Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
-	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
-	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
-	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:776)
-	... 40 more
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
-	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
-	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-	at java.net.Socket.connect(Socket.java:606)
-	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
-	... 53 more
-
-2022-03-24 11:00:59.256  WARN 26104 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-2022-03-24 11:00:59.259 ERROR 26104 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015 - de-registration failedCannot execute request on any known server
-
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:972) [eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:948) [eureka-client-1.10.17.jar:1.10.17]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_251]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_251]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_251]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_251]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389) [spring-beans-5.3.16.jar:5.3.16]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:347) [spring-beans-5.3.16.jar:5.3.16]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:177) [spring-beans-5.3.16.jar:5.3.16]
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:196) [spring-beans-5.3.16.jar:5.3.16]
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:189) [spring-beans-5.3.16.jar:5.3.16]
-	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:390) [spring-cloud-context-3.1.1.jar:3.1.1]
-	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136) [spring-cloud-context-3.1.1.jar:3.1.1]
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:212) [spring-beans-5.3.16.jar:5.3.16]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587) [spring-beans-5.3.16.jar:5.3.16]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559) [spring-beans-5.3.16.jar:5.3.16]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1161) [spring-beans-5.3.16.jar:5.3.16]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520) [spring-beans-5.3.16.jar:5.3.16]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1154) [spring-beans-5.3.16.jar:5.3.16]
-	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1106) [spring-context-5.3.16.jar:5.3.16]
-	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1075) [spring-context-5.3.16.jar:5.3.16]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:172) [spring-boot-2.6.4.jar:2.6.4]
-	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1021) [spring-context-5.3.16.jar:5.3.16]
-	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145) [spring-boot-2.6.4.jar:2.6.4]
-	at java.lang.Iterable.forEach(Iterable.java:75) ~[na:1.8.0_251]
-	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114) [spring-boot-2.6.4.jar:2.6.4]
-	at java.lang.Thread.run(Thread.java:748) ~[na:1.8.0_251]
-
-2022-03-24 11:00:59.275  INFO 26104 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
-2022-03-24 11:05:32.045  INFO 29408 --- [restartedMain] c.m.c.CommentServiceApplication          : Starting CommentServiceApplication using Java 1.8.0_251 on MDB22LT465 with PID 29408 (D:\Spring\Assessment\comment-service\target\classes started by vishnup in D:\Spring\Assessment\comment-service)
-2022-03-24 11:05:32.055  INFO 29408 --- [restartedMain] c.m.c.CommentServiceApplication          : No active profile set, falling back to 1 default profile: "default"
-2022-03-24 11:05:32.436  INFO 29408 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-03-24 11:05:32.438  INFO 29408 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2022-03-24 11:05:37.590  INFO 29408 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
-2022-03-24 11:05:38.650  INFO 29408 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1038 ms. Found 1 MongoDB repository interfaces.
-2022-03-24 11:05:39.921  INFO 29408 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=42894af1-7837-34a2-9a47-713030130aff
-2022-03-24 11:05:44.366  INFO 29408 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 3015 (http)
-2022-03-24 11:05:44.418  INFO 29408 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-03-24 11:05:44.419  INFO 29408 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
-2022-03-24 11:05:44.952  INFO 29408 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-03-24 11:05:44.953  INFO 29408 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 12480 ms
-2022-03-24 11:05:45.903  INFO 29408 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
-2022-03-24 11:05:46.639  INFO 29408 --- [cluster-rtt-ClusterId{value='623c03312346bc574882fbf1', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:66}] to localhost:27017
-2022-03-24 11:05:46.639  INFO 29408 --- [cluster-ClusterId{value='623c03312346bc574882fbf1', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:65}] to localhost:27017
-2022-03-24 11:05:46.643  INFO 29408 --- [cluster-ClusterId{value='623c03312346bc574882fbf1', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=225043100}
-2022-03-24 11:05:46.771  WARN 29408 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
-2022-03-24 11:05:47.253  WARN 29408 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
-2022-03-24 11:05:47.812  WARN 29408 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
-2022-03-24 11:05:49.328  INFO 29408 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'like-service' URL not provided. Will try picking an instance via load-balancing.
-2022-03-24 11:05:49.716  INFO 29408 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'user-service' URL not provided. Will try picking an instance via load-balancing.
-2022-03-24 11:05:57.690  INFO 29408 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
-2022-03-24 11:06:03.345  WARN 29408 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2022-03-24 11:06:03.509  INFO 29408 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2022-03-24 11:06:04.111  INFO 29408 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2022-03-24 11:06:04.141  INFO 29408 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-03-24 11:06:04.878  INFO 29408 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2022-03-24 11:06:04.879  INFO 29408 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2022-03-24 11:06:04.879  INFO 29408 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2022-03-24 11:06:04.907  INFO 29408 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2022-03-24 11:06:04.913  INFO 29408 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2022-03-24 11:06:04.913  INFO 29408 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2022-03-24 11:06:04.913  INFO 29408 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2022-03-24 11:06:09.861  INFO 29408 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2022-03-24 11:06:09.871  INFO 29408 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2022-03-24 11:06:09.879  INFO 29408 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2022-03-24 11:06:09.899  INFO 29408 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1648100169890 with initial instances count: 2
-2022-03-24 11:06:09.910  INFO 29408 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application COMMENT-SERVICE with eureka with status UP
-2022-03-24 11:06:09.912  INFO 29408 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1648100169912, current=UP, previous=STARTING]
-2022-03-24 11:06:09.918  INFO 29408 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015: registering service...
-2022-03-24 11:06:10.550  INFO 29408 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 3015 (http) with context path ''
-2022-03-24 11:06:10.552  INFO 29408 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 3015
-2022-03-24 11:06:10.740  INFO 29408 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015 - registration status: 204
-2022-03-24 11:06:16.708  INFO 29408 --- [restartedMain] c.m.c.CommentServiceApplication          : Started CommentServiceApplication in 52.423 seconds (JVM running for 56.073)
-2022-03-24 11:11:04.973  INFO 29408 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-03-24 11:16:05.016  INFO 29408 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-03-24 11:17:04.602  INFO 29408 --- [http-nio-3015-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-03-24 11:17:04.605  INFO 29408 --- [http-nio-3015-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-03-24 11:17:04.730  INFO 29408 --- [http-nio-3015-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 124 ms
-2022-03-24 11:20:59.600  INFO 29408 --- [http-nio-3015-exec-3] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:75}] to localhost:27017
-2022-03-24 11:21:05.038  INFO 29408 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-03-24 11:26:05.057  INFO 29408 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-03-24 11:26:10.291 ERROR 29408 --- [http-nio-3015-exec-5] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
-
-java.lang.NullPointerException: null
-	at com.mavericsystems.commentservice.service.CommentServiceImpl.updateComment(CommentServiceImpl.java:69) ~[classes/:na]
-	at com.mavericsystems.commentservice.controller.CommentController.updateComment(CommentController.java:31) ~[classes/:na]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_251]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_251]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_251]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_251]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.16.jar:5.3.16]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.16.jar:5.3.16]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.16.jar:5.3.16]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.16.jar:5.3.16]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.16.jar:5.3.16]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.16.jar:5.3.16]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) ~[spring-webmvc-5.3.16.jar:5.3.16]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.16.jar:5.3.16]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.16.jar:5.3.16]
-	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:920) ~[spring-webmvc-5.3.16.jar:5.3.16]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:684) ~[tomcat-embed-core-9.0.58.jar:4.0.FR]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.16.jar:5.3.16]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.58.jar:4.0.FR]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.58.jar:9.0.58]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.16.jar:5.3.16]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.16.jar:5.3.16]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.16.jar:5.3.16]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.16.jar:5.3.16]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.16.jar:5.3.16]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.16.jar:5.3.16]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:359) [tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) [tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889) [tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1735) [tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.58.jar:9.0.58]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.58.jar:9.0.58]
-	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_251]
-
-2022-03-24 11:31:05.061  INFO 29408 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2022-03-24 11:33:23.034  INFO 29408 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application COMMENT-SERVICE with eureka with status DOWN
-2022-03-24 11:33:23.047  INFO 29408 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1648101803047, current=DOWN, previous=UP]
-2022-03-24 11:33:23.049  INFO 29408 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015: registering service...
-2022-03-24 11:33:25.475  INFO 29408 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
-2022-03-24 11:33:27.810  INFO 29408 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on POST request for "http://localhost:8761/eureka/apps/COMMENT-SERVICE": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8761/eureka/apps/COMMENT-SERVICE": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:785)
-	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:711)
-	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:602)
-	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.register(RestTemplateEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
-	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
-	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
-	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
-	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:776)
-	... 23 more
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
-	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
-	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-	at java.net.Socket.connect(Socket.java:606)
-	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
-	... 36 more
-
-2022-03-24 11:33:27.816  WARN 29408 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/COMMENT-SERVICE": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-2022-03-24 11:33:27.822  WARN 29408 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015 - registration failed Cannot execute request on any known server
-
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) [eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101) [eureka-client-1.10.17.jar:1.10.17]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_251]
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_251]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_251]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) [na:1.8.0_251]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_251]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_251]
-	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_251]
-
-2022-03-24 11:33:27.829  WARN 29408 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.discovery.InstanceInfoReplicator     : There was a problem with the instance info replicator
-
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101) [eureka-client-1.10.17.jar:1.10.17]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_251]
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_251]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_251]
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) [na:1.8.0_251]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_251]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_251]
-	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_251]
-
-2022-03-24 11:33:27.850  INFO 29408 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
-2022-03-24 11:33:31.957  INFO 29408 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:785)
-	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:711)
-	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:602)
-	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:87)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
-	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:972)
-	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:948)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:347)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:177)
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:196)
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:189)
-	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:390)
-	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:212)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1161)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1154)
-	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1106)
-	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1075)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:172)
-	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1021)
-	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
-	at java.lang.Iterable.forEach(Iterable.java:75)
-	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
-	at java.lang.Thread.run(Thread.java:748)
-Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
-	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:87)
-	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
-	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:776)
-	... 40 more
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
-	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
-	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-	at java.net.Socket.connect(Socket.java:606)
-	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
-	... 53 more
-
-2022-03-24 11:33:31.962  WARN 29408 --- [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015": Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect; nested exception is org.apache.http.conn.HttpHostConnectException: Connect to localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
-2022-03-24 11:33:31.968 ERROR 29408 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015 - de-registration failedCannot execute request on any known server
-
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71) ~[eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:972) [eureka-client-1.10.17.jar:1.10.17]
-	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:948) [eureka-client-1.10.17.jar:1.10.17]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_251]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_251]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_251]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_251]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389) [spring-beans-5.3.16.jar:5.3.16]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:347) [spring-beans-5.3.16.jar:5.3.16]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:177) [spring-beans-5.3.16.jar:5.3.16]
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:196) [spring-beans-5.3.16.jar:5.3.16]
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:189) [spring-beans-5.3.16.jar:5.3.16]
-	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:390) [spring-cloud-context-3.1.1.jar:3.1.1]
-	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136) [spring-cloud-context-3.1.1.jar:3.1.1]
-	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:212) [spring-beans-5.3.16.jar:5.3.16]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587) [spring-beans-5.3.16.jar:5.3.16]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559) [spring-beans-5.3.16.jar:5.3.16]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1161) [spring-beans-5.3.16.jar:5.3.16]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520) [spring-beans-5.3.16.jar:5.3.16]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1154) [spring-beans-5.3.16.jar:5.3.16]
-	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1106) [spring-context-5.3.16.jar:5.3.16]
-	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1075) [spring-context-5.3.16.jar:5.3.16]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:172) [spring-boot-2.6.4.jar:2.6.4]
-	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1021) [spring-context-5.3.16.jar:5.3.16]
-	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145) [spring-boot-2.6.4.jar:2.6.4]
-	at java.lang.Iterable.forEach(Iterable.java:75) ~[na:1.8.0_251]
-	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114) [spring-boot-2.6.4.jar:2.6.4]
-	at java.lang.Thread.run(Thread.java:748) ~[na:1.8.0_251]
-
-2022-03-24 11:33:31.990  INFO 29408 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2022-04-06 17:38:18.744  INFO 15396 --- [restartedMain] c.m.c.CommentServiceApplication          : Starting CommentServiceApplication using Java 1.8.0_251 on MDB22LT465 with PID 15396 (D:\Spring\Assessment\comment-service\target\classes started by vishnup in D:\Spring\Assessment\comment-service)
+2022-04-06 17:38:18.749  INFO 15396 --- [restartedMain] c.m.c.CommentServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-04-06 17:38:18.908  INFO 15396 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-06 17:38:18.908  INFO 15396 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-06 17:38:20.561  INFO 15396 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-04-06 17:38:20.982  INFO 15396 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 409 ms. Found 1 MongoDB repository interfaces.
+2022-04-06 17:38:21.559  INFO 15396 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=42894af1-7837-34a2-9a47-713030130aff
+2022-04-06 17:38:23.943  INFO 15396 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 3015 (http)
+2022-04-06 17:38:23.961  INFO 15396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-06 17:38:23.962  INFO 15396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-04-06 17:38:24.171  INFO 15396 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-06 17:38:24.172  INFO 15396 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5262 ms
+2022-04-06 17:38:24.501  INFO 15396 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-04-06 17:38:24.635  INFO 15396 --- [cluster-ClusterId{value='624d82b8828d0572d8424a55', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:106}] to localhost:27017
+2022-04-06 17:38:24.635  INFO 15396 --- [cluster-rtt-ClusterId{value='624d82b8828d0572d8424a55', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:107}] to localhost:27017
+2022-04-06 17:38:24.639  INFO 15396 --- [cluster-ClusterId{value='624d82b8828d0572d8424a55', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=40911300}
+2022-04-06 17:38:24.765  WARN 15396 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-04-06 17:38:24.910  WARN 15396 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2022-04-06 17:38:25.035  WARN 15396 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-04-06 17:38:25.648  INFO 15396 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'like-service' URL not provided. Will try picking an instance via load-balancing.
+2022-04-06 17:38:25.793  INFO 15396 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'user-service' URL not provided. Will try picking an instance via load-balancing.
+2022-04-06 17:38:28.278  INFO 15396 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2022-04-06 17:38:30.519  WARN 15396 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2022-04-06 17:38:30.555  INFO 15396 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2022-04-06 17:38:30.816  INFO 15396 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2022-04-06 17:38:30.834  INFO 15396 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 17:38:30.928  INFO 15396 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-04-06 17:38:30.929  INFO 15396 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-04-06 17:38:30.929  INFO 15396 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-04-06 17:38:30.929  INFO 15396 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-04-06 17:38:30.929  INFO 15396 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-04-06 17:38:30.930  INFO 15396 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2022-04-06 17:38:30.930  INFO 15396 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-04-06 17:38:33.338  INFO 15396 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-04-06 17:38:33.344  INFO 15396 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2022-04-06 17:38:33.351  INFO 15396 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-04-06 17:38:33.365  INFO 15396 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1649246913360 with initial instances count: 4
+2022-04-06 17:38:33.368  INFO 15396 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application COMMENT-SERVICE with eureka with status UP
+2022-04-06 17:38:33.370  INFO 15396 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1649246913370, current=UP, previous=STARTING]
+2022-04-06 17:38:33.375  INFO 15396 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015: registering service...
+2022-04-06 17:38:33.497  INFO 15396 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 3015 (http) with context path ''
+2022-04-06 17:38:33.500  INFO 15396 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 3015
+2022-04-06 17:38:33.613  INFO 15396 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015 - registration status: 204
+2022-04-06 17:38:35.262  INFO 15396 --- [restartedMain] c.m.c.CommentServiceApplication          : Started CommentServiceApplication in 20.61 seconds (JVM running for 22.708)
+2022-04-06 17:39:38.722  INFO 15396 --- [http-nio-3015-exec-7] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-06 17:39:38.736  INFO 15396 --- [http-nio-3015-exec-7] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-06 17:39:38.803  INFO 15396 --- [http-nio-3015-exec-7] o.s.web.servlet.DispatcherServlet        : Completed initialization in 67 ms
+2022-04-06 17:39:39.296  INFO 15396 --- [http-nio-3015-exec-7] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:108}] to localhost:27017
+2022-04-06 17:43:31.234  INFO 15396 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 17:48:32.413  INFO 15396 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 17:53:32.523  INFO 15396 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 17:58:32.542  INFO 15396 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 18:03:32.557  INFO 15396 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 18:33:08.345  INFO 30688 --- [restartedMain] c.m.c.CommentServiceApplication          : Starting CommentServiceApplication using Java 1.8.0_251 on MDB22LT465 with PID 30688 (D:\Spring\Assessment\comment-service\target\classes started by vishnup in D:\Spring\Assessment\comment-service)
+2022-04-06 18:33:08.354  INFO 30688 --- [restartedMain] c.m.c.CommentServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-04-06 18:33:08.645  INFO 30688 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-06 18:33:08.646  INFO 30688 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-06 18:33:12.815  INFO 30688 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-04-06 18:33:13.559  INFO 30688 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 729 ms. Found 1 MongoDB repository interfaces.
+2022-04-06 18:33:14.463  INFO 30688 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=42894af1-7837-34a2-9a47-713030130aff
+2022-04-06 18:33:19.234  INFO 30688 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 3015 (http)
+2022-04-06 18:33:19.260  INFO 30688 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-06 18:33:19.261  INFO 30688 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-04-06 18:33:19.654  INFO 30688 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-06 18:33:19.658  INFO 30688 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 11011 ms
+2022-04-06 18:33:20.179  INFO 30688 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-04-06 18:33:20.637  INFO 30688 --- [cluster-rtt-ClusterId{value='624d8f980e398e757404b913', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:117}] to localhost:27017
+2022-04-06 18:33:20.638  INFO 30688 --- [cluster-ClusterId{value='624d8f980e398e757404b913', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:118}] to localhost:27017
+2022-04-06 18:33:20.641  INFO 30688 --- [cluster-ClusterId{value='624d8f980e398e757404b913', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=121195600}
+2022-04-06 18:33:20.850  WARN 30688 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-04-06 18:33:21.269  WARN 30688 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2022-04-06 18:33:21.674  WARN 30688 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-04-06 18:33:22.977  INFO 30688 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'like-service' URL not provided. Will try picking an instance via load-balancing.
+2022-04-06 18:33:23.306  INFO 30688 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'user-service' URL not provided. Will try picking an instance via load-balancing.
+2022-04-06 18:33:28.086  INFO 30688 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2022-04-06 18:33:31.086  WARN 30688 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2022-04-06 18:33:31.169  INFO 30688 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2022-04-06 18:33:31.739  INFO 30688 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2022-04-06 18:33:31.763  INFO 30688 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 18:33:31.900  INFO 30688 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-04-06 18:33:31.902  INFO 30688 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-04-06 18:33:31.902  INFO 30688 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-04-06 18:33:31.903  INFO 30688 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-04-06 18:33:31.903  INFO 30688 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-04-06 18:33:31.904  INFO 30688 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2022-04-06 18:33:31.905  INFO 30688 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-04-06 18:33:34.892  INFO 30688 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-04-06 18:33:34.897  INFO 30688 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2022-04-06 18:33:34.901  INFO 30688 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-04-06 18:33:34.910  INFO 30688 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1649250214907 with initial instances count: 3
+2022-04-06 18:33:34.912  INFO 30688 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application COMMENT-SERVICE with eureka with status UP
+2022-04-06 18:33:34.913  INFO 30688 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1649250214913, current=UP, previous=STARTING]
+2022-04-06 18:33:34.916  INFO 30688 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015: registering service...
+2022-04-06 18:33:35.020  INFO 30688 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 3015 (http) with context path ''
+2022-04-06 18:33:35.021  INFO 30688 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 3015
+2022-04-06 18:33:35.083  INFO 30688 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015 - registration status: 204
+2022-04-06 18:33:37.734  INFO 30688 --- [restartedMain] c.m.c.CommentServiceApplication          : Started CommentServiceApplication in 37.105 seconds (JVM running for 40.391)
+2022-04-06 18:36:48.057  INFO 30688 --- [http-nio-3015-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-06 18:36:48.061  INFO 30688 --- [http-nio-3015-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-06 18:36:48.128  INFO 30688 --- [http-nio-3015-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 66 ms
+2022-04-06 18:36:48.906  INFO 30688 --- [http-nio-3015-exec-2] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:122}] to localhost:27017
+2022-04-06 18:38:31.944  INFO 30688 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 18:43:31.974  INFO 30688 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 18:48:32.010  INFO 30688 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 18:53:32.053  INFO 30688 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 18:58:32.135  INFO 30688 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 19:03:32.196  INFO 30688 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 19:08:32.237  INFO 30688 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 19:13:32.249  INFO 30688 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 19:18:32.254  INFO 30688 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 19:23:32.269  INFO 30688 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 19:28:32.284  INFO 30688 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 19:33:32.326  INFO 30688 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 19:38:32.343  INFO 30688 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 19:43:32.349  INFO 30688 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 19:48:32.364  INFO 30688 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 19:53:32.374  INFO 30688 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 19:55:43.825  INFO 30688 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application COMMENT-SERVICE with eureka with status DOWN
+2022-04-06 19:55:43.827  INFO 30688 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1649255143827, current=DOWN, previous=UP]
+2022-04-06 19:55:43.831  INFO 30688 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015: registering service...
+2022-04-06 19:55:44.408  INFO 30688 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015 - registration status: 204
+2022-04-06 19:55:46.684  INFO 30688 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2022-04-06 19:55:49.718  INFO 30688 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2022-04-06 19:55:49.761  INFO 30688 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015 - deregister  status: 200
+2022-04-06 19:55:49.803  INFO 30688 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2022-04-06 19:56:54.994  INFO 5460 --- [restartedMain] c.m.c.CommentServiceApplication          : Starting CommentServiceApplication using Java 1.8.0_251 on MDB22LT465 with PID 5460 (D:\Spring\Assessment\comment-service\target\classes started by vishnup in D:\Spring\Assessment\comment-service)
+2022-04-06 19:56:54.997  INFO 5460 --- [restartedMain] c.m.c.CommentServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-04-06 19:56:55.205  INFO 5460 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-06 19:56:55.206  INFO 5460 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-06 19:56:59.579  INFO 5460 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-04-06 19:57:00.545  INFO 5460 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 931 ms. Found 1 MongoDB repository interfaces.
+2022-04-06 19:57:01.727  INFO 5460 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5b0212b6-add8-3cc9-8340-18567b8c667c
+2022-04-06 19:57:06.597  INFO 5460 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 3015 (http)
+2022-04-06 19:57:06.627  INFO 5460 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-06 19:57:06.628  INFO 5460 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-04-06 19:57:07.011  INFO 5460 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-06 19:57:07.012  INFO 5460 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 11805 ms
+2022-04-06 19:57:07.420  INFO 5460 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-04-06 19:57:07.580  INFO 5460 --- [cluster-ClusterId{value='624da33b77b766375b1afd5c', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:148}] to localhost:27017
+2022-04-06 19:57:07.586  INFO 5460 --- [cluster-ClusterId{value='624da33b77b766375b1afd5c', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=46498100}
+2022-04-06 19:57:07.586  INFO 5460 --- [cluster-rtt-ClusterId{value='624da33b77b766375b1afd5c', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:149}] to localhost:27017
+2022-04-06 19:57:07.730  WARN 5460 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-04-06 19:57:07.930  WARN 5460 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2022-04-06 19:57:08.076  WARN 5460 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-04-06 19:57:08.914  INFO 5460 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'like-service' URL not provided. Will try picking an instance via load-balancing.
+2022-04-06 19:57:09.195  INFO 5460 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'user-service' URL not provided. Will try picking an instance via load-balancing.
+2022-04-06 19:57:09.296  WARN 5460 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-04-06 19:57:09.296  INFO 5460 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-04-06 19:57:09.315  WARN 5460 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-04-06 19:57:09.315  INFO 5460 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-04-06 19:57:13.728  INFO 5460 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2022-04-06 19:57:15.891  WARN 5460 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2022-04-06 19:57:15.939  INFO 5460 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2022-04-06 19:57:16.062  INFO 5460 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2022-04-06 19:57:16.075  INFO 5460 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 19:57:16.125  INFO 5460 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-04-06 19:57:16.125  INFO 5460 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-04-06 19:57:16.125  INFO 5460 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-04-06 19:57:16.125  INFO 5460 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-04-06 19:57:16.126  INFO 5460 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-04-06 19:57:16.126  INFO 5460 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2022-04-06 19:57:16.126  INFO 5460 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-04-06 19:57:18.077  INFO 5460 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-04-06 19:57:18.082  INFO 5460 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2022-04-06 19:57:18.088  INFO 5460 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-04-06 19:57:18.098  INFO 5460 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1649255238096 with initial instances count: 2
+2022-04-06 19:57:18.101  INFO 5460 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application COMMENT-SERVICE with eureka with status UP
+2022-04-06 19:57:18.103  INFO 5460 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1649255238103, current=UP, previous=STARTING]
+2022-04-06 19:57:18.106  INFO 5460 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015: registering service...
+2022-04-06 19:57:18.155  INFO 5460 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 3015 (http) with context path ''
+2022-04-06 19:57:18.155  INFO 5460 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 3015
+2022-04-06 19:57:18.196  INFO 5460 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015 - registration status: 204
+2022-04-06 19:57:19.806  INFO 5460 --- [restartedMain] c.m.c.CommentServiceApplication          : Started CommentServiceApplication in 32.958 seconds (JVM running for 40.947)
+2022-04-06 20:02:16.157  INFO 5460 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 20:07:16.201  INFO 5460 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 20:12:16.273  INFO 5460 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 20:17:16.323  INFO 5460 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 20:22:16.356  INFO 5460 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 20:27:16.427  INFO 5460 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 20:28:55.630  INFO 5460 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application COMMENT-SERVICE with eureka with status DOWN
+2022-04-06 20:28:55.631  INFO 5460 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1649257135631, current=DOWN, previous=UP]
+2022-04-06 20:28:55.632  INFO 5460 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015: registering service...
+2022-04-06 20:28:55.701  INFO 5460 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015 - registration status: 204
+2022-04-06 20:28:56.931  INFO 5460 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2022-04-06 20:28:59.943  INFO 5460 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2022-04-06 20:28:59.968  INFO 5460 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015 - deregister  status: 200
+2022-04-06 20:28:59.985  INFO 5460 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2022-04-06 20:29:19.871  INFO 10504 --- [restartedMain] c.m.c.CommentServiceApplication          : Starting CommentServiceApplication using Java 1.8.0_251 on MDB22LT465 with PID 10504 (D:\Spring\Assessment\comment-service\target\classes started by vishnup in D:\Spring\Assessment\comment-service)
+2022-04-06 20:29:19.874  INFO 10504 --- [restartedMain] c.m.c.CommentServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-04-06 20:29:19.966  INFO 10504 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-06 20:29:19.966  INFO 10504 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-06 20:29:21.234  INFO 10504 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-04-06 20:29:21.520  INFO 10504 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 280 ms. Found 1 MongoDB repository interfaces.
+2022-04-06 20:29:21.936  INFO 10504 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5b0212b6-add8-3cc9-8340-18567b8c667c
+2022-04-06 20:29:23.924  INFO 10504 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 3015 (http)
+2022-04-06 20:29:23.940  INFO 10504 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-06 20:29:23.941  INFO 10504 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-04-06 20:29:24.129  INFO 10504 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-06 20:29:24.129  INFO 10504 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4162 ms
+2022-04-06 20:29:24.420  INFO 10504 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-04-06 20:29:24.572  INFO 10504 --- [cluster-ClusterId{value='624daacc6ad01225beb613e5', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:154}] to localhost:27017
+2022-04-06 20:29:24.572  INFO 10504 --- [cluster-rtt-ClusterId{value='624daacc6ad01225beb613e5', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:155}] to localhost:27017
+2022-04-06 20:29:24.573  INFO 10504 --- [cluster-ClusterId{value='624daacc6ad01225beb613e5', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=53123000}
+2022-04-06 20:29:24.673  WARN 10504 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-04-06 20:29:24.807  INFO 10504 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-04-06 20:29:24.895  WARN 10504 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-04-06 20:29:25.404  INFO 10504 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'like-service' URL not provided. Will try picking an instance via load-balancing.
+2022-04-06 20:29:25.521  INFO 10504 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'user-service' URL not provided. Will try picking an instance via load-balancing.
+2022-04-06 20:29:25.595  WARN 10504 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-04-06 20:29:25.596  INFO 10504 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-04-06 20:29:25.612  WARN 10504 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-04-06 20:29:25.613  INFO 10504 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-04-06 20:29:27.882  INFO 10504 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2022-04-06 20:29:29.660  WARN 10504 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2022-04-06 20:29:29.705  INFO 10504 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2022-04-06 20:29:29.822  INFO 10504 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2022-04-06 20:29:29.834  INFO 10504 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 20:29:29.886  INFO 10504 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-04-06 20:29:29.887  INFO 10504 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-04-06 20:29:29.887  INFO 10504 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-04-06 20:29:29.887  INFO 10504 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-04-06 20:29:29.887  INFO 10504 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-04-06 20:29:29.887  INFO 10504 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2022-04-06 20:29:29.887  INFO 10504 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-04-06 20:29:31.497  INFO 10504 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-04-06 20:29:31.501  INFO 10504 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2022-04-06 20:29:31.506  INFO 10504 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-04-06 20:29:31.516  INFO 10504 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1649257171514 with initial instances count: 3
+2022-04-06 20:29:31.518  INFO 10504 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application COMMENT-SERVICE with eureka with status UP
+2022-04-06 20:29:31.519  INFO 10504 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1649257171519, current=UP, previous=STARTING]
+2022-04-06 20:29:31.523  INFO 10504 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015: registering service...
+2022-04-06 20:29:31.576  INFO 10504 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 3015 (http) with context path ''
+2022-04-06 20:29:31.577  INFO 10504 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 3015
+2022-04-06 20:29:31.628  INFO 10504 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015 - registration status: 204
+2022-04-06 20:29:33.766  INFO 10504 --- [restartedMain] c.m.c.CommentServiceApplication          : Started CommentServiceApplication in 16.204 seconds (JVM running for 17.333)
+2022-04-06 20:32:12.138  INFO 10504 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application COMMENT-SERVICE with eureka with status DOWN
+2022-04-06 20:32:12.140  INFO 10504 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1649257332140, current=DOWN, previous=UP]
+2022-04-06 20:32:12.140  INFO 10504 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015: registering service...
+2022-04-06 20:32:12.168  INFO 10504 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015 - registration status: 204
+2022-04-06 20:32:13.185  INFO 10504 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2022-04-06 20:32:16.196  INFO 10504 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2022-04-06 20:32:16.210  INFO 10504 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015 - deregister  status: 200
+2022-04-06 20:32:16.218  INFO 10504 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2022-04-06 20:32:29.541  INFO 48228 --- [restartedMain] c.m.c.CommentServiceApplication          : Starting CommentServiceApplication using Java 1.8.0_251 on MDB22LT465 with PID 48228 (D:\Spring\Assessment\comment-service\target\classes started by vishnup in D:\Spring\Assessment\comment-service)
+2022-04-06 20:32:29.544  INFO 48228 --- [restartedMain] c.m.c.CommentServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-04-06 20:32:29.641  INFO 48228 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-06 20:32:29.642  INFO 48228 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-06 20:32:30.984  INFO 48228 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-04-06 20:32:31.253  INFO 48228 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 261 ms. Found 1 MongoDB repository interfaces.
+2022-04-06 20:32:31.725  INFO 48228 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5b0212b6-add8-3cc9-8340-18567b8c667c
+2022-04-06 20:32:33.731  INFO 48228 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 3015 (http)
+2022-04-06 20:32:33.746  INFO 48228 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-06 20:32:33.746  INFO 48228 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-04-06 20:32:33.940  INFO 48228 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-06 20:32:33.941  INFO 48228 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4298 ms
+2022-04-06 20:32:34.216  INFO 48228 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-04-06 20:32:34.327  INFO 48228 --- [cluster-rtt-ClusterId{value='624dab8a46c9cd23345332bc', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:156}] to localhost:27017
+2022-04-06 20:32:34.327  INFO 48228 --- [cluster-ClusterId{value='624dab8a46c9cd23345332bc', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:157}] to localhost:27017
+2022-04-06 20:32:34.328  INFO 48228 --- [cluster-ClusterId{value='624dab8a46c9cd23345332bc', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=40765700}
+2022-04-06 20:32:34.409  WARN 48228 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-04-06 20:32:34.532  INFO 48228 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-04-06 20:32:34.605  WARN 48228 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2022-04-06 20:32:35.113  INFO 48228 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'like-service' URL not provided. Will try picking an instance via load-balancing.
+2022-04-06 20:32:35.256  INFO 48228 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'user-service' URL not provided. Will try picking an instance via load-balancing.
+2022-04-06 20:32:35.306  WARN 48228 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-04-06 20:32:35.307  INFO 48228 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-04-06 20:32:35.321  WARN 48228 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2022-04-06 20:32:35.322  INFO 48228 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-04-06 20:32:37.752  INFO 48228 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2022-04-06 20:32:39.584  WARN 48228 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2022-04-06 20:32:39.629  INFO 48228 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2022-04-06 20:32:39.769  INFO 48228 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2022-04-06 20:32:39.781  INFO 48228 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 20:32:39.835  INFO 48228 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-04-06 20:32:39.835  INFO 48228 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-04-06 20:32:39.835  INFO 48228 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-04-06 20:32:39.836  INFO 48228 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-04-06 20:32:39.836  INFO 48228 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-04-06 20:32:39.836  INFO 48228 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2022-04-06 20:32:39.836  INFO 48228 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-04-06 20:32:41.650  INFO 48228 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-04-06 20:32:41.656  INFO 48228 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2022-04-06 20:32:41.661  INFO 48228 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-04-06 20:32:41.671  INFO 48228 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1649257361669 with initial instances count: 3
+2022-04-06 20:32:41.675  INFO 48228 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application COMMENT-SERVICE with eureka with status UP
+2022-04-06 20:32:41.676  INFO 48228 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1649257361676, current=UP, previous=STARTING]
+2022-04-06 20:32:41.680  INFO 48228 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015: registering service...
+2022-04-06 20:32:41.733  INFO 48228 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 3015 (http) with context path ''
+2022-04-06 20:32:41.734  INFO 48228 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 3015
+2022-04-06 20:32:41.784  INFO 48228 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015 - registration status: 204
+2022-04-06 20:32:43.750  INFO 48228 --- [restartedMain] c.m.c.CommentServiceApplication          : Started CommentServiceApplication in 16.923 seconds (JVM running for 18.61)
+2022-04-06 20:37:39.864  INFO 48228 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 20:38:56.983  INFO 48228 --- [http-nio-3015-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-06 20:38:56.988  INFO 48228 --- [http-nio-3015-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-06 20:38:57.148  INFO 48228 --- [http-nio-3015-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 159 ms
+2022-04-06 20:38:58.763  INFO 48228 --- [http-nio-3015-exec-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:158}] to localhost:27017
+2022-04-06 20:38:58.868  INFO 48228 --- [http-nio-3015-exec-1] c.m.c.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:38:59.668  INFO 48228 --- [http-nio-3015-exec-1] c.m.c.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:38:59.716  WARN 48228 --- [http-nio-3015-exec-1] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: like-service
+2022-04-06 20:38:59.718  WARN 48228 --- [http-nio-3015-exec-1] .s.c.o.l.FeignBlockingLoadBalancerClient : Load balancer does not contain an instance for the service like-service
+2022-04-06 20:38:59.772  WARN 48228 --- [http-nio-3015-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.mavericsystems.commentservice.exception.CustomFeignException: One of the service among user or like is unavailable]
+2022-04-06 20:40:10.695  INFO 48228 --- [http-nio-3015-exec-2] c.m.c.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:40:10.735  INFO 48228 --- [http-nio-3015-exec-2] c.m.c.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:40:10.736  WARN 48228 --- [http-nio-3015-exec-2] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: like-service
+2022-04-06 20:40:10.737  WARN 48228 --- [http-nio-3015-exec-2] .s.c.o.l.FeignBlockingLoadBalancerClient : Load balancer does not contain an instance for the service like-service
+2022-04-06 20:40:10.741  WARN 48228 --- [http-nio-3015-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.mavericsystems.commentservice.exception.CustomFeignException: One of the service among user or like is unavailable]
+2022-04-06 20:40:14.350  INFO 48228 --- [http-nio-3015-exec-5] c.m.c.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:40:14.364  INFO 48228 --- [http-nio-3015-exec-5] c.m.c.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:40:24.138  INFO 48228 --- [http-nio-3015-exec-6] c.m.c.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:40:24.149  INFO 48228 --- [http-nio-3015-exec-6] c.m.c.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:40:24.156  INFO 48228 --- [http-nio-3015-exec-6] c.m.c.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:40:24.165  INFO 48228 --- [http-nio-3015-exec-6] c.m.c.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:40:24.172  INFO 48228 --- [http-nio-3015-exec-6] c.m.c.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:40:24.182  INFO 48228 --- [http-nio-3015-exec-6] c.m.c.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:40:37.933  WARN 48228 --- [http-nio-3015-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.mavericsystems.commentservice.exception.CommentNotFoundException: Comment not found for post id : 624d91546d2d387e6e48dfb]
+2022-04-06 20:40:48.590  INFO 48228 --- [http-nio-3015-exec-4] c.m.c.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:40:48.603  INFO 48228 --- [http-nio-3015-exec-4] c.m.c.configuration.FeignClientRetryer   : Feign retry attempt
+2022-04-06 20:42:39.930  INFO 48228 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-04-06 20:43:22.927  WARN 48228 --- [http-nio-3015-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.mavericsystems.commentservice.exception.CommentIdMismatchException: Comment Id passed in path variable and request Body does not match]
+2022-04-06 20:45:56.251  INFO 48228 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application COMMENT-SERVICE with eureka with status DOWN
+2022-04-06 20:45:56.252  INFO 48228 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1649258156252, current=DOWN, previous=UP]
+2022-04-06 20:45:56.255  INFO 48228 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015: registering service...
+2022-04-06 20:45:56.346  INFO 48228 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015 - registration status: 204
+2022-04-06 20:45:58.586  INFO 48228 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2022-04-06 20:46:01.597  INFO 48228 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2022-04-06 20:46:01.609  INFO 48228 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015 - deregister  status: 200
+2022-04-06 20:46:01.623  INFO 48228 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
