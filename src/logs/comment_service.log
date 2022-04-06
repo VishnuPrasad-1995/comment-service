@@ -317,3 +317,11 @@
 2022-04-06 20:40:48.603  INFO 48228 --- [http-nio-3015-exec-4] c.m.c.configuration.FeignClientRetryer   : Feign retry attempt
 2022-04-06 20:42:39.930  INFO 48228 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2022-04-06 20:43:22.927  WARN 48228 --- [http-nio-3015-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.mavericsystems.commentservice.exception.CommentIdMismatchException: Comment Id passed in path variable and request Body does not match]
+2022-04-06 20:45:56.251  INFO 48228 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application COMMENT-SERVICE with eureka with status DOWN
+2022-04-06 20:45:56.252  INFO 48228 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1649258156252, current=DOWN, previous=UP]
+2022-04-06 20:45:56.255  INFO 48228 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015: registering service...
+2022-04-06 20:45:56.346  INFO 48228 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015 - registration status: 204
+2022-04-06 20:45:58.586  INFO 48228 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2022-04-06 20:46:01.597  INFO 48228 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2022-04-06 20:46:01.609  INFO 48228 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_COMMENT-SERVICE/MDB22LT465.mavericsystems.lan:comment-service:3015 - deregister  status: 200
+2022-04-06 20:46:01.623  INFO 48228 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
