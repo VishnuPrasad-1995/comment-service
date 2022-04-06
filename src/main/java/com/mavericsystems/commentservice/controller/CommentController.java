@@ -2,6 +2,7 @@ package com.mavericsystems.commentservice.controller;
 
 import com.mavericsystems.commentservice.dto.CommentDto;
 import com.mavericsystems.commentservice.dto.CommentRequest;
+import com.mavericsystems.commentservice.exception.CommentIdMismatchException;
 import com.mavericsystems.commentservice.model.Comment;
 import com.mavericsystems.commentservice.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,9 @@ import javax.validation.Valid;
 import javax.ws.rs.QueryParam;
 import java.util.List;
 
+import static com.mavericsystems.commentservice.constant.CommentConstant.COMMENTIDMISMATCH;
+
+@CrossOrigin (origins = "http://localhost:8080")
 @RestController
 @RequestMapping("/posts/{postId}/comments")
 public class CommentController {
@@ -28,11 +32,12 @@ public class CommentController {
     }
     @PutMapping("/{commentId}")
     public ResponseEntity<CommentDto> updateComment(@PathVariable("postId") String postId,@PathVariable("commentId") String commentId,@Valid @RequestBody CommentRequest commentRequest){
-        return new ResponseEntity<>(commentService.updateComment(postId,commentRequest,commentId), HttpStatus.OK);
+        if(commentRequest.getId().equals(commentId))
+            return new ResponseEntity<>(commentService.updateComment(postId,commentRequest,commentId), HttpStatus.OK);
+        else
+            throw new CommentIdMismatchException(COMMENTIDMISMATCH);
+
     }
-
-
-
     @GetMapping("/{commentId}")
     public ResponseEntity<CommentDto> getCommentDetails(@PathVariable("postId") String postId, @PathVariable("commentId") String commentId){
         return new ResponseEntity<>(commentService.getCommentDetails(postId,commentId), HttpStatus.OK);
