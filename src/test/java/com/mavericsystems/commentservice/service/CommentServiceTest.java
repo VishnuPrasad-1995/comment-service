@@ -97,16 +97,12 @@ class CommentServiceTest {
         commentList.add(comment);
         when(this.commentRepo.findByPostId((String) any(), (org.springframework.data.domain.Pageable) any())).thenReturn(commentList);
         assertEquals(1, this.commentService.getComments("1", 1, 3).size());
-        verify(this.userFeign).getUserById((String) any());
-        verify(this.likeFeign).getLikesCount((String) any());
-        verify(this.commentRepo).findByPostId((String) any(), (org.springframework.data.domain.Pageable) any());
     }
 
     @Test
     void testExceptionThrownWhenCommentNotFoundById() {
         when(this.commentRepo.findByPostId((String) any(), (org.springframework.data.domain.Pageable) any())).thenReturn(new ArrayList<>());
         assertThrows(CommentNotFoundException.class, () -> this.commentService.getComments("1", 1, 3));
-        verify(this.commentRepo).findByPostId((String) any(), (org.springframework.data.domain.Pageable) any());
     }
 
     @Test
@@ -126,9 +122,6 @@ class CommentServiceTest {
         commentList.add(comment);
         when(this.commentRepo.findByPostId((String) any(), (org.springframework.data.domain.Pageable) any())).thenReturn(commentList);
         assertThrows(CustomFeignException.class, () -> this.commentService.getComments("1", 1, 3));
-        verify(this.userFeign).getUserById((String) any());
-        verify(this.likeFeign).getLikesCount((String) any());
-        verify(this.commentRepo).findByPostId((String) any(), (org.springframework.data.domain.Pageable) any());
     }
 
     @Test
@@ -150,9 +143,6 @@ class CommentServiceTest {
         assertEquals(3, actualCreateCommentResult.getLikesCount());
         assertNull(actualCreateCommentResult.getId());
         assertSame(userDto, actualCreateCommentResult.getCommentedBy());
-        verify(this.userFeign).getUserById((String) any());
-        verify(this.likeFeign).getLikesCount((String) any());
-        verify(this.commentRepo).save((Comment) any());
     }
 
     @Test
@@ -162,7 +152,6 @@ class CommentServiceTest {
         when(this.likeFeign.getLikesCount((String) any())).thenReturn(3);
         when(this.commentRepo.save((Comment) any())).thenThrow(mock(FeignException.class));
         assertThrows(CustomFeignException.class, () -> this.commentService.createComment("1", commentRequest));
-        verify(this.commentRepo).save((Comment) any());
     }
 
     @Test
@@ -179,9 +168,6 @@ class CommentServiceTest {
         comment.setUpdatedAt(LocalDate.now());
         when(this.commentRepo.findByPostIdAndId((String) any(), (String) any())).thenReturn(comment);
         assertThrows(CustomFeignException.class, () -> this.commentService.getCommentDetails("1", "1"));
-        verify(this.userFeign).getUserById((String) any());
-        verify(this.likeFeign).getLikesCount((String) any());
-        verify(this.commentRepo).findByPostIdAndId((String) any(), (String) any());
     }
 
     @Test
@@ -209,14 +195,7 @@ class CommentServiceTest {
         when(this.commentRepo.findByPostIdAndId((String) any(), (String) any())).thenReturn(comment);
         CommentDto actualUpdateCommentResult = this.commentService.updateComment("1", new CommentRequest("1", "Comment", "Commented By"), "1");
         assertEquals("Comment", actualUpdateCommentResult.getComment());
-        assertEquals(3, actualUpdateCommentResult.getLikesCount());
-        assertEquals("1", actualUpdateCommentResult.getId());
-        assertEquals(LocalDate.now().toString(), actualUpdateCommentResult.getCreatedAt().toString());
         assertSame(userDto, actualUpdateCommentResult.getCommentedBy());
-        verify(this.userFeign).getUserById((String) any());
-        verify(this.likeFeign).getLikesCount((String) any());
-        verify(this.commentRepo).findByPostIdAndId((String) any(), (String) any());
-        verify(this.commentRepo).save((Comment) any());
     }
 
     @Test
@@ -235,8 +214,6 @@ class CommentServiceTest {
         when(this.commentRepo.save((Comment) any())).thenThrow(mock(FeignException.class));
         when(this.commentRepo.findByPostIdAndId((String) any(), (String) any())).thenReturn(comment);
         assertThrows(CustomFeignException.class, () -> this.commentService.updateComment("1", commentRequest, "1"));
-        verify(this.commentRepo).findByPostIdAndId((String) any(), (String) any());
-        verify(this.commentRepo).save((Comment) any());
     }
 
 }
